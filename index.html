@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inRAIN Inc. - Digital Experience & Investment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav-fixed">
+        <div class="nav-container">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <button onclick="scrollToSection('intro')" class="logo-btn">
+                        <img src="images/inrain-logo.png" alt="inRAIN" class="logo-img">
+                    </button>
+                </div>
+                
+                <div class="nav-desktop">
+                    <div class="nav-links">
+                        <button onclick="scrollToSection('intro')" class="nav-link active" data-section="intro">Intro</button>
+                        <button onclick="scrollToSection('experience')" class="nav-link" data-section="experience">Experience</button>
+                        <button onclick="scrollToSection('history')" class="nav-link" data-section="history">History</button>
+                        <button onclick="scrollToSection('clients')" class="nav-link" data-section="clients">Clients</button>
+                        <button onclick="scrollToSection('contact')" class="nav-link" data-section="contact">Contact</button>
+                    </div>
+                </div>
+                
+                <div class="nav-mobile">
+                    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                        <span class="hamburger"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <button onclick="scrollToSection('intro'); closeMobileMenu();" class="mobile-nav-link">Intro</button>
+                <button onclick="scrollToSection('experience'); closeMobileMenu();" class="mobile-nav-link">Experience</button>
+                <button onclick="scrollToSection('history'); closeMobileMenu();" class="mobile-nav-link">History</button>
+                <button onclick="scrollToSection('clients'); closeMobileMenu();" class="mobile-nav-link">Clients</button>
+                <button onclick="scrollToSection('contact'); closeMobileMenu();" class="mobile-nav-link">Contact</button>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Intro Section -->
+        <section id="intro" class="intro-section">
+            <div class="three-scene">
+                <canvas id="threeCanvas"></canvas>
+            </div>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <h1 class="intro-title">
+                        Welcome ,<br>
+                        <span class="text-gradient">inRAIN Inc.</span><br>
+                        
+                    </h1>
+                    <p class="intro-description">
+                        inRAIN dreams of a more comfortable world and creates online and offline services.<br>
+						Also, we will invest in startups that are planning such services and develop them together.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <div class="bg-light">
+            <section id="experience" class="section-spacing">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title text-gradient">EXPERIENCE</h2>
+                    </div>
+                    
+                    <div class="projects-container" id="projectsContainer">
+                        <!-- Projects will be loaded here by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- History Section -->
+        <div class="bg-white">
+            <section id="history" class="section-spacing">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title text-gradient">HISTORY</h2>
+                    </div>
+                    
+                    <div class="timeline-container" id="timelineContainer">
+                        <!-- Timeline will be loaded here by JavaScript -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Clients Section -->
+        <div class="bg-light">
+            <section id="clients" class="section-spacing">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title text-gradient">CLIENTS</h2>
+                    </div>
+                    
+                    <!-- Scrolling Marquee -->
+                    <div class="marquee-container">
+                        <div class="marquee-gradient-left"></div>
+                        <div class="marquee-gradient-right"></div>
+                        <div class="marquee-content" id="marqueeContent">
+                            <!-- Marquee content will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Static Logo Grid -->
+                    <div class="clients-grid" id="clientsGrid">
+                        <!-- Client logos will be loaded here -->
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="bg-white">
+            <section id="contact" class="section-spacing">
+                <div class="container">
+                    <div class="section-header">
+                        <h2 class="section-title text-gradient">CONTACT</h2>
+                    </div>
+                    
+                    <div class="contact-content">
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <h3>Address</h3>
+                                <p>서울특별시 강남구 테헤란로 123</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Email</h3>
+                                <p>contact@inrain.com</p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Phone</h3>
+                                <p>+82-2-1234-5678</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 inRAIN Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
